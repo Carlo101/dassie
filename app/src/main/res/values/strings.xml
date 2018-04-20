@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">Dassie</string>
     <string name="title_activity_profile">ProfileActivity</string>
+    <string name="request">Request</string>
+    <string name="requestProPicDescription">Profile Picture of user</string>
+    <string name="nameLabel">Name:</string>
+    <string name="amountLabel">Amount:</string>
+    <string name="setContractButtonLabel">Set Contract</string>
+    <string name="denyButtonLabel">Deny</string>
+    <string name="contractTitle">Contract</string>
+    <string name="interestLabel">Interest:</string>
+    <string name="daysLabel">Days to pay back:</string>
+    <string name="consequenceLabel">Consequence:</string>
+    <string name="acceptLabel">Accept</string>
+    <string name="declineLabel">Decline</string>
 </resources>
