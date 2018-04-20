@@ -20,6 +20,7 @@
             android:name=".ProfileActivity"
             android:label="@string/title_activity_profile"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".EditProfileActivity"></activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity"></activity>
     </application>
