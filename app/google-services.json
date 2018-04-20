@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "235335270938",
+    "firebase_url": "https://dassie-f1a1f.firebaseio.com",
+    "project_id": "dassie-f1a1f",
+    "storage_bucket": "dassie-f1a1f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235335270938:android:df04f9a324717cf7",
+        "android_client_info": {
+          "package_name": "com.unsignedcharacters.dassie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235335270938-3hjmg9g3ph2uea65hpl8bt3l703qedqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRxZdO26zyyjTUXtSGTMwzbF6RNAb9BwM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
