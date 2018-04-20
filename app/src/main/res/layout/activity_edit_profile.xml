@@ -5,55 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="com.unsignedcharacters.dassie.ProfileActivity">
+    tools:context="com.unsignedcharacters.dassie.EditProfileActivity">
 
     <TextView
-        android:id="@+id/loan_ranges"
+        android:id="@+id/loan_changes"
         android:layout_width="280dp"
         android:layout_height="40dp"
         android:text="Loan Range:"
         android:textAlignment="center"
+
         android:textColor="@android:color/darker_gray"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="267dp" />
-
-    <TextView
-        android:id="@+id/loan_min_max"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:text="R0 - R1000"
-        android:textAlignment="center"
-
-        android:textColor="@android:color/black"
-        android:textSize="24dp"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="310dp" />
+        tools:layout_editor_absoluteY="320dp" />
 
 
     <Button
-        android:id="@+id/button_edit"
+        android:id="@+id/button_apply_changes"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginEnd="64dp"
         android:layout_marginStart="64dp"
         android:background="@android:color/darker_gray"
         android:elevation="8dp"
-        android:text="Edit Profile"
+        android:text="Apply"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="500dp" />
+        tools:layout_editor_absoluteY="435dp" />
 
     <TextView
-        android:id="@+id/MyProfile"
+        android:id="@+id/EditProfile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="My Profile"
+        android:text="Edit Profile"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="24dp"
@@ -69,22 +58,26 @@
         tools:layout_editor_absoluteX="135dp"
         tools:layout_editor_absoluteY="58dp" />
 
-    <ImageView
-        android:id="@+id/RatingPic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="365dp" />
 
-    <TextView
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="272dp"
+        android:layout_height="33dp"
+        android:max="1000"
+        android:min="0"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <EditText
         android:id="@+id/fullName"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:text="Name Surname"
-        android:textColor="@android:color/black"
+        android:layout_width="279dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Full Name"
         android:textSize="24sp"
-        android:textAlignment="center"
         tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="206dp" />
+        tools:layout_editor_absoluteY="230dp" />
+
+
 </android.support.constraint.ConstraintLayout>
