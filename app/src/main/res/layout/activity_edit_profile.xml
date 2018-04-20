@@ -8,7 +8,7 @@
     tools:context="com.unsignedcharacters.dassie.EditProfileActivity">
 
     <TextView
-        android:id="@+id/loan_changes"
+        android:id="@+id/loan_ranges"
         android:layout_width="280dp"
         android:layout_height="40dp"
         android:text="Loan Range:"
