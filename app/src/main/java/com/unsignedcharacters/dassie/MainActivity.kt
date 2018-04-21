@@ -194,6 +194,7 @@ class MainActivity : AppCompatActivity() {
                                                         .onPositive { dialog, which ->
 
                                                             val intent = Intent(this@MainActivity, RequestActivity::class.java)
+                                                            intent.putExtra("amount", amount)
                                                             startActivity(intent)
                                                         }
                                                         .negativeText("No")
