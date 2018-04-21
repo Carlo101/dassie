@@ -77,6 +77,36 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(this, RequestActivity::class.java)
             startActivity(intent)
+
+            val database = FirebaseDatabase.getInstance()
+            val ref = database.getReference()
+            val userRef = ref.child("users")
+
+            val userListener = object: ValueEventListener {
+
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                    val users = dataSnapshot.children.iterator()
+
+                    while (users.hasNext()) {
+
+                        val currentUser = users.next()
+
+                        val user = currentUser.getValue() as HashMap<String, Any>
+
+                        val userId = currentUser.key
+                        userRef.child(userId).child("notified").setValue(true)
+
+                    }
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+
+                }
+            }
+
+            userRef.addValueEventListener(userListener)
+
         }
 
     }
