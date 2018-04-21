@@ -4,7 +4,6 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_edit_profile.*
-import org.junit.experimental.results.ResultMatchers.isSuccessful
 import com.google.android.gms.tasks.Task
 import android.support.annotation.NonNull
 import com.google.android.gms.tasks.OnCompleteListener
