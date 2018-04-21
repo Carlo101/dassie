@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.util.Log
+import com.afollestad.materialdialogs.MaterialDialog
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        listenForNotify()
 
         val database = FirebaseDatabase.getInstance()
         val ref = database.getReference()
@@ -39,7 +42,6 @@ class MainActivity : AppCompatActivity() {
 
                     val userId = currentUser.key
                     val userName: String? = user.get("name") as? String
-
 
                 }
             }
@@ -83,16 +85,24 @@ class MainActivity : AppCompatActivity() {
 
         button_borrow.setOnClickListener {
 
+            val amount = edt_amount.text.toString()
+            val request = Request(user!!.uid, amount)
 
+            val requestKey = ref.child("requests").push().key
+            val requestRef = ref.child("requests").child(requestKey)
+            requestRef.setValue(request)
 
-
+            traverseUsers(requestKey)
         }
 
     }
-    public fun traverseUsers(){
+    public fun traverseUsers(requestKey: String){
+
         val database = FirebaseDatabase.getInstance()
         val ref = database.getReference()
         val userRef = ref.child("users")
+
+        val currentUs = FirebaseAuth.getInstance().currentUser
 
         val userListener = object: ValueEventListener {
 
@@ -100,6 +110,7 @@ class MainActivity : AppCompatActivity() {
 
                 val users = dataSnapshot.children.iterator()
                 val inputLoanAmount = edt_amount.text.toString().toInt()
+
                 while (users.hasNext()) {
 
                     val currentUser = users.next()
@@ -110,9 +121,10 @@ class MainActivity : AppCompatActivity() {
                     val userLoanMin: String? = user.get("loanMin") as? String
                     val userLoanMax: String? = user.get("loanMax") as? String
 
-                    if (userLoanMax != null && userLoanMin != null){
+                    if (userLoanMax != null && userLoanMin != null && userID != currentUs!!.uid) {
+
                         if(inputLoanAmount >= userLoanMin.toInt() && inputLoanAmount <= userLoanMax.toInt()){
-                            userRef.child(userID).child("notify").setValue(true)
+                            userRef.child(userID).child("notify").setValue(requestKey)
                         }
                     }
 
@@ -124,13 +136,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        userRef.addValueEventListener(userListener)
+        userRef.addListenerForSingleValueEvent(userListener)
     }
 
-    public fun listenForNotify(){
+    public fun listenForNotify() {
+
         val database = FirebaseDatabase.getInstance()
         val ref = database.getReference()
         val userRef = ref.child("users")
+        val requestRef = ref.child("requests")
         val user = FirebaseAuth.getInstance().currentUser
 
         val userListener = object: ValueEventListener {
@@ -147,12 +161,61 @@ class MainActivity : AppCompatActivity() {
 
                     val userId = currentUser.key
 
-                    if (user != null){
+                    if (user != null) {
+
                         if (user.uid == userId) {
-                            val notify: Boolean? = taggedUser.get("notify") as? Boolean
-                            if (notify == true){
-                                image_notif.setColorFilter((resources.getColor(R.color.notifyColour)), android.graphics.PorterDuff.Mode.MULTIPLY)
+
+                            val notify: String? = taggedUser.get("notify") as? String
+
+                            if (notify != "") {
+
+                                val requestListener = object: ValueEventListener {
+
+                                    override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                                        val requests = dataSnapshot.children.iterator()
+
+                                        while (requests.hasNext()) {
+
+                                            val currentRequest = requests.next()
+
+                                            val request = currentRequest.getValue() as HashMap<String, Any>
+                                            val requestKey = currentRequest.key
+
+                                            val borrower: String? = request.get("borrower") as? String
+                                            val amount: String? = request.get("amount") as? String
+
+                                            if (requestKey == notify) {
+
+                                                MaterialDialog.Builder(this@MainActivity)
+                                                        .title("Hey!")
+                                                        .content("You received a request to lend R" + amount  + "! Would you like to proceed?")
+                                                        .positiveText("Yes")
+                                                        .onPositive { dialog, which ->
+
+                                                            val intent = Intent(this@MainActivity, RequestActivity::class.java)
+                                                            startActivity(intent)
+                                                        }
+                                                        .negativeText("No")
+                                                        .onNegative { dialog, which ->
+
+                                                            userRef.child(userId).child("notify").setValue("")
+                                                        }
+                                                        .show()
+                                            }
+
+                                        }
+                                    }
+
+                                    override fun onCancelled(databaseError: DatabaseError) {
+
+                                    }
+                                }
+
+                                requestRef.addListenerForSingleValueEvent(requestListener)
+
                             }
+
                         }
                     }
 
