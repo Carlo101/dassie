@@ -11,26 +11,36 @@
         android:id="@+id/loan_ranges"
         android:layout_width="280dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Loan Range:"
         android:textAlignment="center"
         android:textColor="@android:color/darker_gray"
         android:textSize="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/fullName"
-        tools:layout_editor_absoluteX="52dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fullName" />
 
     <TextView
         android:id="@+id/loan_min_max"
         android:layout_width="280dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="R0 - R1000"
-
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/loan_ranges"
-        tools:layout_editor_absoluteX="52dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loan_ranges" />
 
 
     <Button
@@ -39,13 +49,13 @@
         android:layout_height="45dp"
         android:layout_marginEnd="64dp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="48dp"
         android:background="@android:color/darker_gray"
         android:elevation="8dp"
         android:text="Edit Profile"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RatingPic" />
 
@@ -68,29 +78,44 @@
         android:id="@+id/ProfilePic"
         android:layout_width="114dp"
         android:layout_height="124dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MyProfile"
-        app:srcCompat="@mipmap/ic_launcher_round"
-        tools:layout_editor_absoluteX="135dp" />
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <ImageView
         android:id="@+id/RatingPic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loan_min_max"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="138dp" />
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
         android:id="@+id/fullName"
         android:layout_width="280dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Name Surname"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@+id/ProfilePic"
-        tools:layout_editor_absoluteX="52dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProfilePic" />
 </android.support.constraint.ConstraintLayout>
