@@ -2,21 +2,38 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/button_edit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="com.unsignedcharacters.dassie.ProfileActivity"
-    android:screenOrientation="portrait">
+    android:screenOrientation="portrait"
+    tools:context="com.unsignedcharacters.dassie.ProfileActivity">
+
+    <Button
+        android:id="@+id/button_borrow2"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/background_light"
+        android:elevation="0dp"
+        android:text="Save"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/loan_ranges"
         android:layout_width="280dp"
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="25dp"
         android:text="Loan Range:"
         android:textAlignment="center"
         android:textColor="@android:color/darker_gray"
@@ -28,74 +45,45 @@
     <TextView
         android:id="@+id/loan_min_max"
         android:layout_width="280dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
 
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="R0 - R1000"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="24dp"
+        android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loan_ranges" />
 
 
-    <Button
-        android:id="@+id/button_edit"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="48dp"
-        android:background="@android:color/darker_gray"
-        android:elevation="8dp"
-        android:text="Edit Profile"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RatingPic" />
-
-    <ImageView
-        android:id="@+id/ProfilePic"
-        android:layout_width="79dp"
-        android:layout_height="82dp"
-        android:src="@drawable/brandon"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="60dp" />
-
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/RatingPic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/brandon"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loan_min_max"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/fullName"
         android:layout_width="280dp"
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Name Surname"
+        android:layout_marginTop="40dp"
+        android:text="Brandon Addison"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProfilePic" />
+        app:layout_constraintTop_toBottomOf="@+id/RatingPic" />
 </android.support.constraint.ConstraintLayout>

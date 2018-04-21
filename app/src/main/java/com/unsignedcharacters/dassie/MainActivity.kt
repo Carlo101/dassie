@@ -67,8 +67,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        image_profile.setOnClickListener {
 
-
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
 
         button_borrow.setOnClickListener {
 
