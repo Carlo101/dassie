@@ -73,6 +73,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        image_settings.setOnClickListener {
+
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
         button_borrow.setOnClickListener {
 
             val intent = Intent(this, RequestActivity::class.java)

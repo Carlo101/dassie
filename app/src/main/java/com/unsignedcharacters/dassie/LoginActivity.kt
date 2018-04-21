@@ -88,6 +88,8 @@ class LoginActivity : AppCompatActivity() {
                         .positiveText("OK")
                         .onPositive { dialog, which ->
 
+
+
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
 
