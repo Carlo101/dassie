@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
+import com.afollestad.materialdialogs.MaterialDialog
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.AuthResult
@@ -13,6 +14,9 @@ import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.concurrent.TimeUnit
+import com.google.firebase.auth.FirebaseUser
+
+
 
 class LoginActivity : AppCompatActivity() {
 
