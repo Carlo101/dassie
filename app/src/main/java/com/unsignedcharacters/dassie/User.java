@@ -1,28 +1,37 @@
 package com.unsignedcharacters.dassie;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
 /**
  * Created by faisalmlalani on 4/21/18.
  */
 
 public class User {
 
-    private String name;
-    private String email;
-    private int rating;
-    private int loanMax;
-    private int loanMin;
+    public String id;
+    public String name;
+    public String rating;
+    public String loanMax;
+    public String loanMin;
 
     public User() {
 
 
     }
 
-    public User(String name, String email) {
+    public User(String name) {
 
+        id = FirebaseAuth.getInstance().getCurrentUser().getUid();
         this.name = name;
-        this.email = email;
-        rating = 3;
-        loanMax = 1000;
-        loanMin = 200;
+        rating = "3";
+        loanMax = "1000";
+        loanMin = "200";
+    }
+
+    public void setMinAndMax (String min, String max) {
+
+        loanMin = min;
+        loanMax = max;
     }
 }
