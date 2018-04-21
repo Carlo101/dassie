@@ -3,7 +3,7 @@ package com.unsignedcharacters.dassie
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_contract.*
+import kotlinx.android.synthetic.main.activity_request.*
 
 class RequestActivity : AppCompatActivity() {
 
@@ -11,7 +11,7 @@ class RequestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_request)
 
-        btnAccept.setOnClickListener{
+        btnSetContract.setOnClickListener{
             val intent = Intent(this, ContractActivity::class.java)
             startActivity(intent)
         }
