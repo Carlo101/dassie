@@ -22,7 +22,8 @@ class EditProfileActivity : AppCompatActivity() {
 
         button_apply_changes.setOnClickListener {
             val user = FirebaseAuth.getInstance().currentUser
-            val name = fullName.text as String
+            val name = fullName.text.toString()
+
 
 
             val profileUpdates = UserProfileChangeRequest.Builder()

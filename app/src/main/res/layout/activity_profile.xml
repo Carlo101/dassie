@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="com.unsignedcharacters.dassie.ProfileActivity">
+    tools:context="com.unsignedcharacters.dassie.ProfileActivity"
+    android:screenOrientation="portrait">
 
     <TextView
         android:id="@+id/loan_ranges"
@@ -59,34 +60,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RatingPic" />
 
-    <TextView
-        android:id="@+id/MyProfile"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="My Profile"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/ProfilePic"
         android:layout_width="79dp"
         android:layout_height="82dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MyProfile"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        android:src="@drawable/brandon"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="60dp" />
 
     <ImageView
         android:id="@+id/RatingPic"

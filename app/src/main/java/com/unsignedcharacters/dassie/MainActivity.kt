@@ -13,12 +13,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
 
-
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val database = FirebaseDatabase.getInstance()
         val ref = database.getReference()
         val userRef = ref.child("users")
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                     val userId = currentUser.key
                     val userName: String? = user.get("name") as? String
 
-                    text_name.text = userName
+
                 }
             }
 
@@ -59,7 +59,6 @@ class MainActivity : AppCompatActivity() {
         } else {
 
             val userName = user.displayName
-            txv_welcome.text="Welcome "+ userName
 
             if (userName == "") {
 

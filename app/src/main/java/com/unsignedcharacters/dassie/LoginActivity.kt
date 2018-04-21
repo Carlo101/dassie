@@ -33,12 +33,6 @@ class LoginActivity : AppCompatActivity() {
                     this,               // Activity (for callback binding)
                     mCallbacks);        // OnVerificationStateChangedCallba}
         }
-
-        button_sign_up.setOnClickListener {
-
-            val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     var mCallbacks = object: PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
