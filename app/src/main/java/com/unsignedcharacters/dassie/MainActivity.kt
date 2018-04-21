@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
         button_borrow.setOnClickListener {
 
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, RequestActivity::class.java)
             startActivity(intent)
         }
 
