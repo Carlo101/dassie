@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context="com.unsignedcharacters.dassie.RequestActivity">
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/button_home4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="25dp"
+        android:clickable="true"
+        app:backgroundTint="@android:color/holo_red_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_home_white_24dp" />
+
     <ImageView
         android:id="@+id/profilePicView"
         android:layout_width="wrap_content"
