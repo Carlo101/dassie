@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         } else {
 
             val userName = user.displayName
+            txv_welcome.text="Welcome "+ userName
 
             if (userName == "") {
 
