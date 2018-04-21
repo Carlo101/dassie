@@ -14,6 +14,7 @@ public class User {
     public String rating;
     public String loanMax;
     public String loanMin;
+    public boolean notify;
 
     public User() {
 
@@ -27,11 +28,16 @@ public class User {
         rating = "3";
         loanMax = "1000";
         loanMin = "200";
+        notify = false;
     }
 
     public void setMinAndMax (String min, String max) {
 
         loanMin = min;
         loanMax = max;
+    }
+
+    public void isNotify(boolean notify){
+        this.notify = notify;
     }
 }
